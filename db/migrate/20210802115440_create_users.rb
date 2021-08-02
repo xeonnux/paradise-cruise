@@ -6,7 +6,8 @@ class CreateUsers < ActiveRecord::Migration[6.0]
       t.text :email
       t.string :phone_number
       t.string :password
-      t.boolean :is_owner
+      t.boolean :is_owner, :default => false
+      #Ex:- :default =>''
 
       t.timestamps
     end
