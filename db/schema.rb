@@ -48,7 +48,7 @@ ActiveRecord::Schema.define(version: 2021_08_02_120024) do
     t.text "email"
     t.string "phone_number"
     t.string "password"
-    t.boolean "is_owner"
+    t.boolean "is_owner", default: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
