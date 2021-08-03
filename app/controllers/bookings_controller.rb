@@ -19,7 +19,7 @@ class BookingsController < ApplicationController
   def destroy
     @booking = Booking.find(params[:id])
     @cruise = Cruise.find(@booking.cruise_id)
-    if Booking.delete(params[:id]).positive? 
+    if Booking.delete(params[:id]).positive?
       flash[:success] = 'Booking has been cancelled'
     else
       flash[:error] = 'Sorry something went wrong, please try again'
