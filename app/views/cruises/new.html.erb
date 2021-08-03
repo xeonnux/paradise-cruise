@@ -1,2 +1,6 @@
-<h1>Insert a new cruise page</h1>
-<%= render 'form' %>
+<% if current_user.is_owner? %>
+  <h1>Insert a new cruise page</h1>
+  <%= render 'form' %>
+<% else %>
+  <% render 'shared/flashes' %>
+<% end %>
