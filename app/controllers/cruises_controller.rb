@@ -1,4 +1,10 @@
 class CruisesController < ApplicationController
+  skip_before_action :authenticate_user!, only: :index
+  
+  def index
+    @cruises = Cruise.all
+  end
+
   def new
     @cruise = Cruise.new
   end
