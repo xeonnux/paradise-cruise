@@ -10,4 +10,9 @@
 
 // Your CSS partials
 @import "components/index";
+@import "components/waves";
 @import "pages/index";
+
+.body {
+  background-color: aquamarine;
+}
