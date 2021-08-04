@@ -1,11 +1,11 @@
 class BookingsController < ApplicationController
   def new
-    @cruise = Cruise.find(params[:cruise_id])
+    @cruise = Cruise.find(params[:id])
     @booking = Booking.new
   end
 
   def create
-    @cruise = Cruise.find(params[:cruise_id])
+    @cruise = Cruise.find(params[:id])
     @booking = Booking.new(booking_params)
     @booking.cruise = @cruise
     if @booking.save
