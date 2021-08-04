@@ -16,7 +16,7 @@
             <li class="list-group-item"> Price: Rs<%= cruise.price %></li>
           </ul>
           <div class="card-body">
-            <%= link_to "Book Now", cruises_path, class: "btn btn-booknow card-link"%>
+            <%= link_to "Book Now",  cruise_path(cruise), class: "btn btn-booknow card-link"%>
           </div>
         </div>
       </div>

@@ -1,0 +1,23 @@
+<h1>show cruise</h1>
+
+  <div class="d-flex justify-content-center">
+      <div class="row justify-content-center m-4">
+        <div class="card w-50 bg-light">
+          <img src="..." class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title"> <%= @cruise.name %> </h5>
+            <p class="card-text"><h6>Duration of Cruise:</h6><%= @cruise.duration_of_cruise %></p>
+            <p class="card-text"><%= @cruise.description %></p>
+            <p class="card-text"><%= @cruise.extra_offers %></p>
+            <p class="card-text"><%= @cruise.cancellation_policy %></p>
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item"> Location: <%= @cruise.location %></li>
+            <li class="list-group-item"> Price: Rs<%= @cruise.price %></li>
+          </ul>
+          <div class="card-body">
+            <%= link_to "Confirm Book Now",  new_cruise_booking_path(@cruise), class: "btn btn-booknow card-link"%>
+          </div>
+        </div>
+      </div>
+  </div>

@@ -9,6 +9,10 @@ class CruisesController < ApplicationController
     @cruise = Cruise.new
   end
 
+  def show
+    @cruise = Cruise.find(params[:id])
+  end
+
   def create
     @cruise = Cruise.new(cruise_params)
     @cruise.save
