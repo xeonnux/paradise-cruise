@@ -64,3 +64,12 @@ h4 {
   border-radius: 8px !important;
   box-shadow: 2px 2px 5px #454545;
 }
+
+.navbar-bg {
+  margin-left: 10px;
+  margin-right: 10px;
+  border-radius: 25px;
+  box-shadow: 2px 2px 4px #868686;
+  margin-top: 25px;
+  background-color: rgba($color: rgb(65, 170, 222), $alpha: 0.6);
+}
