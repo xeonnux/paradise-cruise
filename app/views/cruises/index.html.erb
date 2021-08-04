@@ -1,1 +1,24 @@
-<h1>Index of cruises</h1>
+<div class="container">
+  <h1>Our <span>Cruise</span> list</h1>
+    <h4>Take a look at our best offers and travel destinations:</h4>
+
+  <div class="d-flex justify-content-center">
+    <% @cruises.each do |cruise| %> 
+      <div class="row m-4">
+        <div class="card bg-light" style="width: 18rem;">
+          <img src="..." class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title"> <%= cruise.name %> </h5>
+            <p class="card-text"><%= cruise.description.first(40)... %></p>
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item"> Location: <%= cruise.location %></li>
+            <li class="list-group-item"> Price: Rs<%= cruise.price %></li>
+          </ul>
+          <div class="card-body">
+            <%= link_to "Book Now", new_cruise_booking_path, class: "btn btn-booknow card-link"%>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
