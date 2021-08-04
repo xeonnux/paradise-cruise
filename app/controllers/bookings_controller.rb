@@ -1,6 +1,6 @@
 class BookingsController < ApplicationController
   def new
-    @cruise = Cruise.find(params[:id])
+    @cruise = Cruise.find(params[:cruise_id])
     @booking = Booking.new
   end
 
@@ -14,6 +14,11 @@ class BookingsController < ApplicationController
       @bookings = @cruise.bookings
       render 'cruises/show'
     end
+  end
+
+  def index
+    @cruise = Cruise.find(params[:id])
+    @bookings = Booking.all
   end
 
   def destroy
