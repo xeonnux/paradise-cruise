@@ -1,19 +1,32 @@
-<h1>show cruise</h1>
+<div class="bannered">
+  <h1>show cruise</h1>
+</div>
 
-  <div class="d-flex justify-content-center">
-      <div class="row justify-content-center m-4">
-        <div class="card w-50 bg-light">
-          <div class="card-body" style="height: 300px; margin-top: 10px; margin-bottom: 10px; border-radius: 6px; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path("cruise/mauritius-marine-discovery-package_2_azn1bc", height: 300, crop: :fit) %>')">
-            <h5 class="card-title text-white"> <%= @cruise.name %> </h5>
-            <p class="card-text text-white"><h6 class="text-white">Duration of Cruise:</h6></p>
-            <p class="card-text text-white"><%= @cruise.description %></p>
-            <p class="card-text text-white"><%= @cruise.extra_offers %></p>
-            <p class="card-text text-white"><%= @cruise.cancellation_policy %></p>
-          </div>
-          <ul class="list-group list-group-flush">
-            <li class="list-group-item"> Location: <%= @cruise.location %></li>
-            <li class="list-group-item"> Price: Rs<%= @cruise.price %></li>
-          </ul>
+
+
+<h5 class="card-title text-white"> <%= @cruise.name %> </h5>
+
+<div class="main-container">
+  <div class="left-side">
+  <%= image_tag @cruise.image_url %>
+  </div>
+
+  <div class="right-side">
+    <div class="description"><%= @cruise.description %></div>
+    <div class="colo-wrapper">
+      <div class="colo"><h2>logo on top  for all 3 </h2> Duration: <%= @cruise.duration_of_cruise %></div>
+      <div class="colo"> Location: <%= @cruise.location %></div>
+      <div class="colo"> Price: Rs<%= @cruise.price %></div>
+    </div>
+  </div>
+</div>
+
+<div class="bottom-container">
+  <div class="left-bottom"> <h1>map</h1></div>
+  <div class="right-bottom">
+    <div class="row-one"><p>Extra offers<%= @cruise.extra_offers %></p></div>
+    <div class="row-two"><p><%= @cruise.cancellation_policy %></p></div>
+  </div>
           <div class="card-body d-flex justify-content-around">
             <%= link_to "Return Back",  cruises_path, class: "btn btn-booknow card-link"%>
           </div>
@@ -31,3 +44,4 @@
         </div>
       </div>
   </div>
+</div>

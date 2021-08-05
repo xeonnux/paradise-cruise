@@ -1,0 +1,75 @@
+.bannered {
+    background-color: red;
+    height: 25vh;
+    width: 100%;
+  }
+  
+  .main-container {
+    border: blue;
+    height: 60vh;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 2fr 4fr ;
+    grid-gap: 10px;
+  
+  }
+  
+  .left-side {
+    background-color: green;
+    height: 60vh;  
+  }
+  
+  .right-side {
+    border: 3px solid blue;
+    height: 60vh;
+  }
+  
+  .description {
+    background-color: purple;
+    height: 25%;
+  }
+  
+  .colo-wrapper {
+    border: 8px dashed orange;
+    height: 75%;
+    display: flex;
+  }
+  
+  .colo {
+    border:  4px solid yellowgreen;
+    height: 100%;
+  }
+  
+  
+  .bottom-container {
+    border:  4px solid pink;
+    height: 40vh; 
+    width: 100%;
+    display: grid;
+    grid-template-columns: 2fr 4fr ;
+    grid-gap: 10px;
+  }
+  
+  .left-bottom {
+    background-color: blue;
+    height: 40vh; 
+  
+  }
+  
+  .right-bottom {
+    background-color: purple;
+    height: 40vh; 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  
+  }
+  
+  .row-one {
+    background-color: royalblue;
+    height: 40%;
+  }
+  .row-two {
+    background-color: sienna;
+    height: 40%;
+  }
