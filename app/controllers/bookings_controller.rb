@@ -1,7 +1,6 @@
 class BookingsController < ApplicationController
 
   def index
-    @cruise = Cruise.find(params[:id])
     @bookings = Booking.all
   end
 
@@ -10,17 +9,14 @@ class BookingsController < ApplicationController
   end
 
   def create
-    @cruise = Cruise.find(params[:cruise_id])
+    @cruise = Cruise.find(params[:booking][:cruise_id])
     @booking = Booking.new(booking_params)
-    @booking.schedule_date = Date.new
-    @booking.available_seats = @cruise.capacity
-    @booking.cruise = @cruise
+    @booking.available_seats = @cruise.capacity - Booking.all.count
     @booking.user = current_user
     if @booking.save
       flash[:notice] = 'Booking has been successfully recorded'
       redirect_to cruises_path
     else
-      @bookings = @cruise.bookings
       render 'cruises/show'
     end
   end
@@ -39,6 +35,6 @@ class BookingsController < ApplicationController
   private
 
   def booking_params
-    params.require(:booking).permit(:total_price)
+    params.require(:booking).permit(:total_price, :cruise_id, :schedule_date)
   end
 end

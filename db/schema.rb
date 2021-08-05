@@ -38,7 +38,7 @@ ActiveRecord::Schema.define(version: 2021_08_03_124214) do
 
   create_table "bookings", force: :cascade do |t|
     t.float "total_price"
-    t.date "schedule_date"
+    t.string "schedule_date"
     t.integer "available_seats"
     t.bigint "cruise_id", null: false
     t.bigint "user_id", null: false
