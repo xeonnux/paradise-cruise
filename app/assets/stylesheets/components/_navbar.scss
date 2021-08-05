@@ -12,5 +12,17 @@
   width: 200px;
   padding: 10px;
   border-radius: 5px;
-  background-color: rgba(200, 200, 210, 0.6);
+  background-color: #8DCCEB;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: white;
+  font-weight: 1000;
+  font-size: 18px;
+}
+
+.navbar a:hover {
+  color: #515151;
+  transition: 0.3s;
 }

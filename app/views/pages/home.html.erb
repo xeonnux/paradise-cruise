@@ -1,48 +1,76 @@
 <div class ="container">
 
   <h1 id="header">Welcome to <span>Paradise Cruises Mauritius</span></h1>
-  <div class="carousel-container">
-    <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
-      <div class="carousel-indicators">
-        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+
+
+  <div class= "d-flex flex-row justify-content-evenly my-5 flex-basis">
+    <div class="carousel-container">
+      <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <%= cl_image_tag("cruise/beautiful-boat-ocean-paradise-wallpaper-preview_byncgm", crop: :fit, class: "d-block carousel-image") %>
+              <div class="carousel-caption d-none d-md-block">
+                <p> May your adventures bring you closer together, even as they take you far away from home. </p>
+              </div>
+          </div>
+          <div class="carousel-item">
+            <%= cl_image_tag( "cruise/zil-cruise-cover-1024x683_ahto2d", crop: :fit, class: "d-block carousel-image") %>
+              <div class="carousel-caption d-none d-md-block">
+                <p> Explore the world with our greatest offers, make memories on the paradise island.</p>
+              </div>
+          </div>
+          <div class="carousel-item">
+            <%= cl_image_tag( "cruise/cd44f8_83fc021174744c058d9cd308006ec097_mv2_bkkr0h", crop: :fit, class: "d-block carousel-image") %>
+              <div class="carousel-caption d-none d-md-block">
+                <p>Traveling with us will leave you speechless, then turn you into a storyteller.</p>
+              </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+        </button>
       </div>
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-          <%= cl_image_tag("cruise/beautiful-boat-ocean-paradise-wallpaper-preview_byncgm", crop: :fit, class: "d-cover carousel-image") %>
-            <div class="carousel-caption d-none d-md-block">
-              <p> May your adventures bring you closer together, even as they take you far away from home. </p>
-            </div>
-        </div>
-        <div class="carousel-item">
-          <%= cl_image_tag( "cruise/zil-cruise-cover-1024x683_ahto2d", crop: :fit, class: "d-block carousel-image") %>
-            <div class="carousel-caption d-none d-md-block">
-              <p> Explore the world with our greatest offers, make memories on the paradise island.</p>
-            </div>
-        </div>
-        <div class="carousel-item">
-          <%= cl_image_tag( "cruise/cd44f8_83fc021174744c058d9cd308006ec097_mv2_bkkr0h", crop: :fit, class: "d-block carousel-image") %>
-            <div class="carousel-caption d-none d-md-block">
-              <p>Traveling with us will leave you speechless, then turn you into a storyteller.</p>
-            </div>
-        </div>
-      </div>
-      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-      </button>
+    </div>
+    
+    <div class = "d-flex flex-column m-4">
+        <p id="description">
+          <h4> Insight:</h4>
+          Paradise Cruises Mauritius, your online cruise travel company dedicated to providing customers with better deals than any other cruise website and access to great deals on cruise vacations.
+          Offering special rates and savings on cruise bookings with some of the most popular cruise lines in the world, we are so confident in our cruise packages that each and every deal is backed by a price guarantee.
+          You'll love where we take you!
+        </p>
+        <%= link_to "BOOK YOUR CRUISE NOW",  cruises_path, class: "btn btn-booknow card-link"%>
     </div>
   </div>
-   
-  <p id="description">
-     <h4> About us:</h4>
-    Paradise Cruises Mauritius, your online cruise travel company dedicated to providing customers with better deals than any other cruise website and access to great deals on cruise vacations.
-    Offering special rates and savings on cruise bookings with some of the most popular cruise lines in the world, we are so confident in our cruise packages that each and every deal is backed by a price guarantee.
-    You'll love where we take you!
-  </p>
+
+  <div class=" d-flex justify-content-evenly">
+
+      <div id="services">
+        <ul>
+        <li><i class="fas fa-street-view"></i> <p>Guides : our guides are professionally trained, experienced, hospitable and well groomed. We take great pride in being able to provide a large number of professional multi-lingual guides on our island. Our most important assets!</p></li>
+        <li><i class="fas fa-shuttle-van"></i> <p>Transportation : we have excellent relationships with transport providers on both islands and maintain regular checks on both vehicles and drivers – constantly working to improve standards</p></li>
+        <li><i class="far fa-calendar-check"></i><p> Timing of excursions : we update our tours according to traffic situations and other important factors to ensure timely stops and returns.</p></li>
+        </ul>
+      </div>
+
+      <div>
+        <figure class="figure m-4">
+          <%= cl_image_tag("cruise/cd44f8_83fc021174744c058d9cd308006ec097_mv2_bkkr0h", class: "figure-img img-fluid rounded") %>
+            <figcaption class="figure-caption text-end">Paradise Cruises, Mauritius.</figcaption>
+        </figure>
+      </div>
+
+  </div>
+
+
 </div>
