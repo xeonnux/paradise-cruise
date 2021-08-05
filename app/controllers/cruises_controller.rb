@@ -1,6 +1,6 @@
 class CruisesController < ApplicationController
   skip_before_action :authenticate_user!, only: :index
-  
+
   def index
     @cruises = Cruise.all
   end
@@ -11,6 +11,7 @@ class CruisesController < ApplicationController
 
   def show
     @cruise = Cruise.find(params[:id])
+    @booking = Booking.new
   end
 
   def create
@@ -38,6 +39,7 @@ class CruisesController < ApplicationController
   end
 
   def cruise_params
-    params.require(:cruise).permit(:name, :description, :duration_of_cruise, :capacity, :extra_offers, :cancellation_policy, :location, :price)
+    params.require(:cruise).permit(:name, :description, :duration_of_cruise,
+                                   :capacity, :extra_offers, :cancellation_policy, :location, :price)
   end
 end

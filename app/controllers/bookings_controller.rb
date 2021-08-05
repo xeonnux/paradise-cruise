@@ -1,24 +1,28 @@
 class BookingsController < ApplicationController
-  def new
-    @cruise = Cruise.find(params[:cruise_id])
-    @booking = Booking.new
-  end
-
-  def create
-    @cruise = Cruise.find(params[:id])
-    @booking = Booking.new(booking_params)
-    @booking.cruise = @cruise
-    if @booking.save
-      redirect_to booking_path(@booking)
-    else
-      @bookings = @cruise.bookings
-      render 'cruises/show'
-    end
-  end
 
   def index
     @cruise = Cruise.find(params[:id])
     @bookings = Booking.all
+  end
+
+  def new
+    @booking = Booking.new
+  end
+
+  def create
+    @cruise = Cruise.find(params[:cruise_id])
+    @booking = Booking.new(booking_params)
+    @booking.schedule_date = Date.new
+    @booking.available_seats = @cruise.capacity
+    @booking.cruise = @cruise
+    @booking.user = current_user
+    if @booking.save
+      flash[:notice] = 'Booking has been successfully recorded'
+      redirect_to cruises_path
+    else
+      @bookings = @cruise.bookings
+      render 'cruises/show'
+    end
   end
 
   def destroy
@@ -35,6 +39,6 @@ class BookingsController < ApplicationController
   private
 
   def booking_params
-    params.require(:booking).permit(:total_price, :schedule_date, :available_seats)
+    params.require(:booking).permit(:total_price)
   end
 end

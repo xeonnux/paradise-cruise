@@ -1,7 +1,2 @@
 <h1>my booking show</h1>
 
-<% @bookings.each do |booking| %>
-  <% if booking.user.username == current_user %>
-  <%= booking.name %>
-  <% end %>
-<% end %>
