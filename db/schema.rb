@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_03_124214) do
+ActiveRecord::Schema.define(version: 2021_08_05_075158) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -51,7 +51,7 @@ ActiveRecord::Schema.define(version: 2021_08_03_124214) do
   create_table "cruises", force: :cascade do |t|
     t.string "name"
     t.text "description"
-    t.string "duration_of_cruise"
+    t.time "duration_of_cruise"
     t.integer "capacity"
     t.string "extra_offers"
     t.text "cancellation_policy"
@@ -60,6 +60,7 @@ ActiveRecord::Schema.define(version: 2021_08_03_124214) do
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "image_url"
     t.index ["user_id"], name: "index_cruises_on_user_id"
   end
 
@@ -68,7 +69,7 @@ ActiveRecord::Schema.define(version: 2021_08_03_124214) do
     t.string "address"
     t.string "phone_number"
     t.string "password"
-    t.boolean "is_owner"
+    t.boolean "is_owner", default: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "email", default: "", null: false
