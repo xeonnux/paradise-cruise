@@ -1,0 +1,47 @@
+.cruise-heading {
+  margin-top: 1.5rem;
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+// .booking_schedule_date {
+//   border: 2px solid red;
+//   select {
+//     background-color: purple;
+//   }
+// }
+
+.cruise-options {
+  min-width: 18%;
+  text-align: center;
+  margin-top: 5rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+
+  h3 {
+    font-size: 1rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #ffffff;
+    margin-top: 0.75rem;
+    background-color: #000000c0;
+    padding: 0.25rem 1rem;
+    min-width: 200px;
+  }
+
+  i {
+    font-size: 3.5rem;
+    color: #00000090;
+  }
+
+  span {
+    font-size: 1rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #ffffff;
+    background-color: #00000090;
+    padding: 0.25rem 1rem;
+    min-width: 200px;
+    display: inline-block;
+  }
+}

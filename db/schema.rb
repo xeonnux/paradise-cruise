@@ -51,7 +51,7 @@ ActiveRecord::Schema.define(version: 2021_08_05_075158) do
   create_table "cruises", force: :cascade do |t|
     t.string "name"
     t.text "description"
-    t.time "duration_of_cruise"
+    t.string "duration_of_cruise"
     t.integer "capacity"
     t.string "extra_offers"
     t.text "cancellation_policy"
