@@ -28,13 +28,20 @@
     <div class="row-two"><p><%= @cruise.cancellation_policy %></p></div>
   </div>
           <div class="card-body d-flex justify-content-around">
-            <%= simple_form_for([@cruise, @booking]) do |f| %>
-                <%=  f.hidden_field :total_price, :value => @cruise.price %>
-                <%= f.button :submit, class: "btn btn-booknow card-link" %>
-            <% end %>
             <%= link_to "Return Back",  cruises_path, class: "btn btn-booknow card-link"%>
           </div>
+          <div class="card-body d-flex justify-content-center">
+            <%= simple_form_for(@booking) do |f| %>
+              <%= f.hidden_field :total_price, :value => @cruise.price %>
+              <%= f.hidden_field :cruise_id, :value => @cruise.id %>
+              <%= f.input :schedule_date, as: 
+                            :date, start_year: Date.today.year,
+                            end_year: Date.today.year, discard_day: false,
+                            order: [:day, :month, :year] %>
+              <%= f.button :submit, class: "btn btn-booknow card-link" %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+  </div>
 </div>
-
-
-

@@ -1,1 +1,36 @@
 <h1>my bookings list</h1>
+<div class="d-flex row justify-content-center">
+  <% @bookings.each do |booking| %>
+    <% if (booking.user_id == current_user.id) %>
+      <div class="col-lg-2 h-5 justify-content-center m-2">
+        <div class="card bg-light">
+          <div class="card-body">
+            <h5 class="card-title text-white"> <%= booking.cruise.name %> </h5>
+            <p class="card-text text-white"><%= booking.cruise.cancellation_policy %></p>
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item"> Location: <%= booking.cruise.location %></li>
+            <li class="list-group-item"> schedule date: <%= booking.schedule_date %></li>
+            <li class="list-group-item"> Price: Rs<%= booking.cruise.price %></li>
+          </ul>
+        </div>
+      </div>
+    <% elsif current_user.is_owner? %>
+      <div class="col-lg-2 h-5 justify-content-center m-2">
+        <div class="card bg-light">
+          <div class="card-body">
+            <h5 class="card-title text-white"> <%= booking.cruise.name %> </h5>
+            <p class="card-text text-white"><%= booking.cruise.cancellation_policy %></p>
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item"> Location: <%= booking.cruise.location %></li>
+            <li class="list-group-item"> schedule date: <%= booking.schedule_date %></li>
+          </ul>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+  <div class="card-body d-flex justify-content-around">
+    <%= link_to "Return Back",  root_path, class: "btn btn-booknow card-link"%>
+  </div>
+</div>
