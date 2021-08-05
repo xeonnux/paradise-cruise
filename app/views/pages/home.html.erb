@@ -41,10 +41,9 @@
         </button>
       </div>
     </div>
-    
     <div class = "d-flex flex-column m-4">
-        <p id="description">
-          <h4> Insight:</h4>
+        <p class="" id="description">
+          <h3> Insight:</h3>
           Paradise Cruises Mauritius, your online cruise travel company dedicated to providing customers with better deals than any other cruise website and access to great deals on cruise vacations.
           Offering special rates and savings on cruise bookings with some of the most popular cruise lines in the world, we are so confident in our cruise packages that each and every deal is backed by a price guarantee.
           You'll love where we take you!
@@ -52,27 +51,17 @@
         <%= link_to "BOOK YOUR CRUISE NOW",  cruises_path, class: "btn btn-booknow card-link"%>
     </div>
   </div>
-
-  <div class=" d-flex justify-content-evenly">
-
-      <div id="services">
-        <ul>
+  <div class="d-flex row justify-content-evenly">
+    <div class="col w-50 justify-content-center align-items-center" id="services">
+      <ul>
         <li><i class="fas fa-street-view"></i> <p>Guides : our guides are professionally trained, experienced, hospitable and well groomed. We take great pride in being able to provide a large number of professional multi-lingual guides on our island. Our most important assets!</p></li>
         <li><i class="fas fa-shuttle-van"></i> <p>Transportation : we have excellent relationships with transport providers on both islands and maintain regular checks on both vehicles and drivers – constantly working to improve standards</p></li>
         <li><i class="far fa-calendar-check"></i><p> Timing of excursions : we update our tours according to traffic situations and other important factors to ensure timely stops and returns.</p></li>
-        </ul>
-      </div>
-
-      <div>
-        <figure class="figure m-4">
-          <%= cl_image_tag("cruise/cd44f8_83fc021174744c058d9cd308006ec097_mv2_bkkr0h", class: "figure-img img-fluid rounded") %>
-            <figcaption class="figure-caption text-end">Paradise Cruises, Mauritius.</figcaption>
-        </figure>
-      </div>
-
+      </ul>
+    </div>
+    <div class="col w-50 justify-content-center align-items-center">
+        <%= render "pages/imagesvg" %>
+        <figcaption class="figure-caption text-center">Paradise Cruises, Mauritius.</figcaption>
+    </div>
   </div>
-
-
-    <%= render "pages/imagesvg" %>
-
 </div>

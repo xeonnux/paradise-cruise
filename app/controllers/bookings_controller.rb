@@ -11,6 +11,7 @@ class BookingsController < ApplicationController
   def create
     @cruise = Cruise.find(params[:booking][:cruise_id])
     @booking = Booking.new(booking_params)
+    @booking.schedule_date = get_booking_date(booking_params)
     @booking.available_seats = @cruise.capacity - Booking.all.count
     @booking.user = current_user
     if @booking.save
@@ -33,6 +34,10 @@ class BookingsController < ApplicationController
   end
 
   private
+
+  def get_booking_date(params)
+    "#{params["schedule_date(3i)"]}/#{params["schedule_date(2i)"]}/#{params["schedule_date(1i)"]}"
+  end
 
   def booking_params
     params.require(:booking).permit(:total_price, :cruise_id, :schedule_date)

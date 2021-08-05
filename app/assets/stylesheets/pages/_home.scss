@@ -14,27 +14,21 @@
 }
 
 #header span {
-    color: #41AADE;
-    font-weight: 800;
+  color: #41aade;
+  font-weight: 800;
 }
 
 h4 {
-  font-family: 'Andada Pro', serif;
+  font-family: "Andada Pro", serif;
   text-align: center;
 }
 
-#description {
-    font-family: 'Andada Pro', serif;
-    font-weight: 300;
-    margin: 30px
-
-}
-
 .contact {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    list-style: none;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
 }
 
 .contact a {
@@ -44,11 +38,11 @@ h4 {
   margin: 30px;
 }
 
-.contact a :hover{
+.contact a :hover {
   transform: scale(1.5);
-  transition: 0.5s; 
-  color: #1E304F;
-  }
+  transition: 0.5s;
+  color: #1e304f;
+}
 
 .contact p {
   margin: auto 0;
@@ -57,8 +51,7 @@ h4 {
 .carousel-image {
   border-radius: 8px !important;
   max-width: 500px;
-  max-height:300px;
-
+  max-height: 300px;
 }
 
 .carousel-container {
@@ -66,11 +59,6 @@ h4 {
   box-shadow: 1px 1px 3px #454545;
   height: 300px;
   width: 500px;
-}
-
-.navbar-bg {
-  box-shadow: 1px 1px 3px #515151;
-  background-color: rgba($color: rgb(65, 170, 222), $alpha: 0.6);
 }
 
 ul {
@@ -92,8 +80,13 @@ figure img {
 .flex-child {
   flex: 1;
   border: 2px solid yellow;
-}  
+}
 
 .flex-child:first-child {
   margin-right: 20px;
-} 
+}
+
+p {
+  font-size: 1.2rem;
+  font-weight: 400;
+}

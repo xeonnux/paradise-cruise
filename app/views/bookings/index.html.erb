@@ -5,10 +5,10 @@
       <div class="col-lg-2 h-5 justify-content-center m-2">
         <div class="card bg-light">
           <div class="card-body">
-            <h5 class="card-title text-white"> <%= booking.cruise.name %> </h5>
-            <p class="card-text text-white"><%= booking.cruise.cancellation_policy %></p>
+            <h5 class="card-title"><%= booking.cruise.name %> </h5>
           </div>
           <ul class="list-group list-group-flush">
+            <li class="list-group-item">Cancellation Policy: <%= booking.cruise.cancellation_policy %></li>
             <li class="list-group-item"> Location: <%= booking.cruise.location %></li>
             <li class="list-group-item"> schedule date: <%= booking.schedule_date %></li>
             <li class="list-group-item"> Price: Rs<%= booking.cruise.price %></li>
@@ -19,10 +19,10 @@
       <div class="col-lg-2 h-5 justify-content-center m-2">
         <div class="card bg-light">
           <div class="card-body">
-            <h5 class="card-title text-white"> <%= booking.cruise.name %> </h5>
-            <p class="card-text text-white"><%= booking.cruise.cancellation_policy %></p>
+            <h5 class="card-title"> <%= booking.cruise.name %> </h5>
           </div>
           <ul class="list-group list-group-flush">
+            <li class="list-group-item">Cancellation Policy: <%= booking.cruise.cancellation_policy %></li>
             <li class="list-group-item"> Location: <%= booking.cruise.location %></li>
             <li class="list-group-item"> schedule date: <%= booking.schedule_date %></li>
           </ul>

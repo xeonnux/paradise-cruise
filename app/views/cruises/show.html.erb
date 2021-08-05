@@ -1,47 +1,53 @@
-<div class="bannered">
-  <h1>show cruise</h1>
-</div>
+<div class="d-flex justify-content-center align-items-start" style="height: 100vh; background-position: center; background-size: cover; background-repeat: no-repeat; background-image: url('<%= @cruise.image_url %>')">
 
-
-
-<h5 class="card-title text-white"> <%= @cruise.name %> </h5>
-
-<div class="main-container">
-  <div class="left-side">
-  <%= image_tag @cruise.image_url %>
+  <div class="card py-3 px-5" style="opacity: 0.9; margin-top: 5rem; margin-left: 10rem; max-width: 1024px">
+    <h1 style="font-size: 1.5rem; margin-top: 0;"><%= @cruise.name %></h1>
+    <%= simple_form_for(@booking) do |f| %>
+      <%= f.hidden_field :total_price, :value => @cruise.price %>
+      <%= f.hidden_field :cruise_id, :value => @cruise.id %>
+      <%= f.input :schedule_date, as: :date,
+                    start_year: Date.today.year,
+                    end_year: Date.today.year+1, discard_day: false,
+                    order: [:day, :month, :year] %>
+      <%= f.button :submit, class: "btn btn-booknow" %>
+      <%= link_to "Return Back",  cruises_path, class: "btn btn-secondary" %>
+    <% end %>
+    <br>
+    <div>    
+      <%= @cruise.description %>
+    </div>
+    <div>
+      <h2 class="cruise-heading">Extra Offers</h2>
+      <%= @cruise.extra_offers %>
+    </div>
+    <div>
+      <h2 class="cruise-heading">Cancellation Policy</h2>
+      <%= @cruise.cancellation_policy %>
+    </div>
+    <br>
   </div>
-
-  <div class="right-side">
-    <div class="description"><%= @cruise.description %></div>
-    <div class="colo-wrapper">
-      <div class="colo"><h2>logo on top  for all 3 </h2> Duration: <%= @cruise.duration_of_cruise %></div>
-      <div class="colo"> Location: <%= @cruise.location %></div>
-      <div class="colo"> Price: Rs<%= @cruise.price %></div>
+  <div class="d-flex flex-column justify-content-center align-items-start" style="margin-top: -1rem;">
+    <div class="cruise-options">
+      <i class="fas fa-stopwatch" ></i>
+      <h3>Duration</h3>
+      <span>
+        <%= @cruise.duration_of_cruise %>
+      </span>
+    </div>
+    <div class="cruise-options">
+      <i class="fas fa-map-marked-alt" ></i>
+      <h3>Departure</h3>
+      <span>
+        <%= @cruise.location %>
+      </span>
+    </div>
+    <div class="cruise-options">
+      <i class="far fa-credit-card" ></i>
+      <h3>Price</h3>
+      <span>
+        Rs <%= @cruise.price.to_i %>
+      </span>
     </div>
   </div>
 </div>
 
-<div class="bottom-container">
-  <div class="left-bottom"> <h1>map</h1></div>
-  <div class="right-bottom">
-    <div class="row-one"><p>Extra offers<%= @cruise.extra_offers %></p></div>
-    <div class="row-two"><p><%= @cruise.cancellation_policy %></p></div>
-  </div>
-          <div class="card-body d-flex justify-content-around">
-            <%= link_to "Return Back",  cruises_path, class: "btn btn-booknow card-link"%>
-          </div>
-          <div class="card-body d-flex justify-content-center">
-            <%= simple_form_for(@booking) do |f| %>
-              <%= f.hidden_field :total_price, :value => @cruise.price %>
-              <%= f.hidden_field :cruise_id, :value => @cruise.id %>
-              <%= f.input :schedule_date, as: 
-                            :date, start_year: Date.today.year,
-                            end_year: Date.today.year, discard_day: false,
-                            order: [:day, :month, :year] %>
-              <%= f.button :submit, class: "btn btn-booknow card-link" %>
-            <% end %>
-          </div>
-        </div>
-      </div>
-  </div>
-</div>
