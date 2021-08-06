@@ -17,6 +17,10 @@
   color: #41aade;
   font-weight: 800;
 }
+#description {
+  width: 30%;
+  text-align: center;
+}
 
 h4 {
   font-family: "Andada Pro", serif;
@@ -67,6 +71,11 @@ ul {
 
 #services {
   text-align: center;
+
+  i {
+    font-size: 2rem;
+    color: #515151; 
+  }
 }
 
 figure img {

@@ -4,12 +4,12 @@
   font-weight: bold;
 }
 
-// .booking_schedule_date {
-//   border: 2px solid red;
-//   select {
-//     background-color: purple;
-//   }
-// }
+.booking_schedule_date {
+
+  select {
+    background-color: rgb(200, 240, 243);
+  }
+}
 
 .cruise-options {
   min-width: 18%;
@@ -31,7 +31,7 @@
 
   i {
     font-size: 3.5rem;
-    color: #00000090;
+    color: #ffffffce;
   }
 
   span {
