@@ -26,11 +26,11 @@ class BookingsController < ApplicationController
     @booking = Booking.find(params[:id])
     @cruise = Cruise.find(@booking.cruise_id)
     if Booking.delete(params[:id]).positive?
-      flash[:success] = 'Booking has been cancelled'
+      flash[:notice] = "Your booking for #{@cruise.name} has been successfully cancelled !"
     else
-      flash[:error] = 'Sorry something went wrong, please try again'
+      flash[:error] = 'Sorry something went wrong, please try again!'
     end
-    redirect_to booking_path(@booking)
+    redirect_to bookings_path
   end
 
   private
