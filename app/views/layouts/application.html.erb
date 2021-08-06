@@ -15,7 +15,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Andada+Pro&family=Poppins:ital,wght@1,700;1,800&display=swap" rel="stylesheet">
   <body>
     <%= render 'shared/navbar' %>
-    <%= render 'shared/flashes' %>
+    <div class="container d-flex justify-content-center">
+      <div class="w-50 mt-5 p-5">
+        <%= render 'shared/flashes' %>
+      </div>
+    </div>
     <div>
       <%= yield %>
     </div>
