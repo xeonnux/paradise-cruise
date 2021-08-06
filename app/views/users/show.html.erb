@@ -1,12 +1,12 @@
-<h1>My fidelity points</h1>
+<h1 class="mt-3">My fidelity points</h1>
 <div class="container d-flex justify-content-center">
   <div class="row">
-    <div class="col-lg-12" style="height: 40vh;" >
+    <div class="col-lg-12" style="height: 50vh;" >
       <h3>We are very pleased to have you as one of our valued customers</h3>
       <p>This is why we have the pleasure to offer a Fidelity point accumulator upon every bookings made through our system.</p>
       <div class="d-flex justify-content-center align-items-center py-3">
         <h3 class="mr-4 py-3">Your Fidelity Point Total is actually:</h3>
-        <h2 class="bg-success text-white px-4 py-2"><%= @fidelity_point %></h2>
+        <h2 class="bg-success text-white px-4 py-2"><%= @fidelity_point.to_i %></h2>
       </div>
     </div>
   </div>
