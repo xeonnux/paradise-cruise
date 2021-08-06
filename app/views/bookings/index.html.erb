@@ -11,7 +11,7 @@
             <li class="list-group-item">Cancellation Policy: <%= booking.cruise.cancellation_policy %></li>
             <li class="list-group-item"> Location: <%= booking.cruise.location %></li>
             <li class="list-group-item"> schedule date: <%= booking.schedule_date %></li>
-            <li class="list-group-item"> Price: Rs<%= booking.cruise.price %></li>
+            <li class="list-group-item"> Price: Rs<%= booking.cruise.price.to_i %></li>
           </ul>
         </div>
       </div>
