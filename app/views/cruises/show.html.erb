@@ -9,8 +9,8 @@
                     start_year: Date.today.year,
                     end_year: Date.today.year+1, discard_day: false,
                     order: [:day, :month, :year] %>
-      <%= f.button :submit, class: "btn btn-booknow" %>
-      <%= link_to "Return Back",  cruises_path, class: "btn btn-secondary" %>
+      <%= f.button :submit, class: "btn btn-booknow", value: "Confirm Booking" %>
+      <%= link_to "Back",  cruises_path, class: "btn btn-secondary" %>
     <% end %>
     <br>
     <div>    
